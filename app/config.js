@@ -12,6 +12,7 @@ require.config({
     jquery: "../assets/js/libs/jquery",
     underscore: "../assets/js/libs/underscore",
     backbone: "../assets/js/libs/backbone",
+    backbone_ls: "../assets/js/libs/backbone.localStorage",
 
     // Shim Plugin
     use: "../assets/js/plugins/use"
@@ -21,6 +22,10 @@ require.config({
     backbone: {
       deps: ["use!underscore", "jquery"],
       attach: "Backbone"
+    },
+    
+    backbone_ls: {
+      deps: ["use!backbone"]
     },
 
     underscore: {

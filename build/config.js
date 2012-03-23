@@ -42,6 +42,15 @@ config.init({
     ]
   },
 
+  jade: {
+    files: ["app/templates/**/*.jade"]
+  },
+
+  less: {
+    files: ["assets/css/**/*.less"]
+  },
+
+
   // The concatenate task is used here to merge the almond require/define shim
   // and the templates into the application code.  It's named
   // dist/debug/require.js, because we want to only load one script file in
@@ -126,7 +135,7 @@ config.init({
 // dist/debug/templates.js, compile all the application code into
 // dist/debug/require.js, and then concatenate the require/define shim
 // almond.js and dist/debug/templates.js into the require.js file.
-task.registerTask("default", "clean lint jst requirejs concat");
+task.registerTask("default", "clean jade less lint jst requirejs concat");
 
 // The debug task is simply an alias to default to remain consistent with
 // debug/release.
